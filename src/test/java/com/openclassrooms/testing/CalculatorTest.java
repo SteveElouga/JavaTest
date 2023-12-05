@@ -46,7 +46,7 @@ class CalculatorTest {
     }
     @ParameterizedTest(name = "{0} + {1} doit etre egal {2}")
     @CsvSource({"1,2,3", "2,3,5", "42,57,99"})
-    public void testAddTwoPositivsNumbers(int arg1, int arg2, int expectResult){
+    void testAddTwoPositivsNumbers(int arg1, int arg2, int expectResult){
         //ARRANGE
         //Deja configure
 
@@ -60,7 +60,7 @@ class CalculatorTest {
 
     @ParameterizedTest(name = "{0} * 0 doit etre egal a 0")
     @ValueSource(ints = {1, 2, 5, 99, 1000})
-    public void testMultiplyTwoPositivsNumbers(int arg){
+    void testMultiplyTwoPositivsNumbers(int arg){
         //ARRANGE
         //Deja configure
 
@@ -69,11 +69,11 @@ class CalculatorTest {
         final int actualResult = calculatorUnderTest.multiply(arg,0);
 
         //AASERT
-        assertThat(actualResult).isEqualTo(0);
+        assertThat(actualResult).isZero();
     }
 
     @Test
-    public void testNumbers(){
+    void testNumbers(){
 
         int n;
 
